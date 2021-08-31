@@ -1,5 +1,10 @@
 import 'package:flutter/material.dart';
+import 'package:fmc/Screen/reg.dart';
+import 'package:fmc/contant.dart';
 import 'package:fmc/index.dart';
+import "package:fmc/contant.dart";
+import "package:fmc/Screen/login.dart";
+import "package:fmc/Screen/login.dart";
 //import 'package:fmc/HomeP.dart';
 
 void main() {
@@ -13,7 +18,15 @@ class MYAPP extends StatelessWidget {
     return MaterialApp
     (
       title: 'Chad',
-      theme: ThemeData.dark(),
+      theme: ThemeData(
+          primaryColor: pColor,
+          secondaryHeaderColor: sColor,
+      ),
+      routes :{ 
+        'Login' : (context) => Login(),
+        'Register': (context) => Register(),
+      },
+    
       home: ID(),
     );
   }

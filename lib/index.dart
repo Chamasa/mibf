@@ -1,4 +1,5 @@
 import 'package:flutter/material.dart';
+import "package:fmc/contant.dart";
 
 class ID extends StatelessWidget {
   @override
@@ -36,12 +37,13 @@ class ID extends StatelessWidget {
                   textStyle: TextStyle(
                     fontSize: 20,
                   ),
-                  primary: Colors.amber[900],
+                  primary: pColor,
                   padding: EdgeInsets.all(20.0),
                   shape: StadiumBorder()),
               child: Text('LOGIN'),
               onPressed: () {
                 print("LOGIN!!");
+                Navigator.pushNamed(context, 'Login');
               },
             ),
             SizedBox(
@@ -57,7 +59,8 @@ class ID extends StatelessWidget {
                   shape: StadiumBorder()),
               child: Text('SignUP'),
               onPressed: () {
-                print("SignUP!!");
+                print("SignUp");
+                Navigator.pushNamed(context, 'Register');
               },
             ),
           ],
