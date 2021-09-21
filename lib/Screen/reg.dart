@@ -1,8 +1,8 @@
 import 'package:flutter/material.dart';
+import 'package:fmc/backend/database.dart';
 import 'package:fmc/contant.dart';
 
-var name, age, surname, email, password;
-final formkey = GlobalKey<FormState>();
+
 
 class Register extends StatefulWidget {
   const Register({Key? key}) : super(key: key);
@@ -12,6 +12,9 @@ class Register extends StatefulWidget {
 }
 
 class _RegisterState extends State<Register> {
+  
+var name, age, surname, email, password;
+final formkey = GlobalKey<FormState>();
   @override
   Widget build(BuildContext context) {
     return SafeArea(
@@ -106,13 +109,13 @@ class _RegisterState extends State<Register> {
           validator: (val3) {
             if (!(val3!.contains('@'))) {
               return 'กรุญากรอก Email';
-            }else if(!(val3.contains('.'))){
+            } else if (!(val3.contains('.'))) {
               return 'กรุญากรอก Email';
             }
-          }, 
-          onSaved: (val3){
-          email = (val3);}
-          ),
+          },
+          onSaved: (val3) {
+            email = (val3);
+          }),
     );
   }
 
@@ -120,34 +123,32 @@ class _RegisterState extends State<Register> {
     return Container(
       margin: EdgeInsets.fromLTRB(30, 10, 30, 10),
       child: TextFormField(
-        style: TextStyle(
-          color: sColor,
-          fontSize: 24,
-        ),
-        decoration: InputDecoration(
-          labelText: "Password",
-          icon: Icon(Icons.password),
-          hintText: "ใส่หรัสผ่าน",
-        ),
-        obscureText: true,
-        onSaved: (val4) {
-        password = (val4);}
-      ),
+          style: TextStyle(
+            color: sColor,
+            fontSize: 24,
+          ),
+          decoration: InputDecoration(
+            labelText: "Password",
+            icon: Icon(Icons.password),
+            hintText: "ใส่หรัสผ่าน",
+          ),
+          obscureText: true,
+          onSaved: (val4) {
+            password = (val4);
+          }),
     );
   }
-}
 
-Widget btnS() {
-  return ElevatedButton(
-      child: Text('Submit'),
-      onPressed: () {
-        print("object");
-        if (formkey.currentState!.validate()) {
-          formkey.currentState!.save();
-          print('ชื่อ : $name');
-          print('นามสกุล : $surname');
-          print('Email : $email');
-          print('รหัสผ่าน : $password');
-        }
-      });
+  Widget btnS() {
+    return ElevatedButton(
+        child: Text('Submit'),
+        onPressed: () {
+          if (formkey.currentState!.validate()) {
+            formkey.currentState!.save();
+            var LBD = localDB();
+            LBD.REG(name, surname, email, password);
+            Navigator.pushNamed(context, 'Login');
+          }
+        });
+  }
 }

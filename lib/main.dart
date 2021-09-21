@@ -5,6 +5,8 @@ import 'package:fmc/index.dart';
 import "package:fmc/contant.dart";
 import "package:fmc/Screen/login.dart";
 import "package:fmc/Screen/login.dart";
+
+import 'Screen/dashB.dart';
 //import 'package:fmc/HomeP.dart';
 
 void main() {
@@ -25,6 +27,7 @@ class MYAPP extends StatelessWidget {
       routes :{ 
         'Login' : (context) => Login(),
         'Register': (context) => Register(),
+        'dashB' : (context) => DashB(),
       },
     
       home: ID(),
