@@ -1,0 +1,40 @@
+{
+  "project_info": {
+    "project_number": "1016040634747",
+    "project_id": "mobiepro",
+    "firebase_url": "https://mobiepro-default-rtdb.asia-southeast1.firebasedatabase.app/",
+    "storage_bucket": "mobiepro.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:1016040634747:android:46c819664fa683d55925de",
+        "android_client_info": {
+          "package_name": "com.example.fmc"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "1016040634747-hufs1kgt3ae5mc7o5jgkavtaasq7t0rf.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyC0xxTMliuY_vNnlhBgAX91nQT_hRD_X-4"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "1016040634747-hufs1kgt3ae5mc7o5jgkavtaasq7t0rf.apps.googleusercontent.com",
+              "client_type": 3
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
